@@ -37,36 +37,28 @@ const isDeepEqual = (obj1, obj2) =>{
 
     if(Object.keys(obj1).length==Object.keys(obj2).length){
         for (let key in obj1){
-            if(Object.keys(obj1[key]).length>1){
-                if(!isEqual(obj1[key], obj2[key])){
-                    return false
-                }
-            }
-        else
-            if(obj1[key]!=obj2[key]){
+            if(obj2[key]==null){
                 return false
             }
-        
+        if(typeof(obj1[key]) == 'object' && typeof(obj2[key])== 'object'){
+            if(!isDeepEqual(obj1[key],obj2[key])){
+                return false;
+            } 
+        }
+    else{
+        if(obj1[key]!=obj2[key]){
+            return false
+        }
+}
 
         }
         return true
-    }
-    else{
+    }else{
         return false
     }
 }
 
-function isEqual(ob1,ob2){
-    for (let key in ob1){
-        if(Object.keys(ob1[key]).length>1){
-            return isEqual (ob1[key],ob2[key])
-        }
-        else if(ob1[key]!=ob2[key]){
-            return false
-        }
-    }
-    return true
-}
+
 
 
 

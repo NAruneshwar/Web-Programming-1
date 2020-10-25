@@ -169,7 +169,7 @@ try {
   
    const forth = {a: {sA: "Hello", sB: "There", sC: "Class"}, b: 7, c: true, d: "Test"}
    const fifth  = {c: true, b: 7, d: "Test", a: {sB: "There", sC: "Class", sA: "Hello"}}
-   const isDeepEqualOne = obj.isDeepEqual(forth, fifth);
+   const isDeepEqualOne = obj.isDeepEqual({a:{aa:{aaa:{aaaa:1,bbbb:2}}},b:{bb:{bbb:3},cc:{ddd:{dddd:4}}}},{b:{bb:{bbb:3},cc:{ddd:{dddd:4}}},a:{aa:{aaa:{aaaa:1,bbbb:2}}}});
    console.log('isDeepEqual passed successfully');
 }  catch (e) {
    console.error('isDeepEqual failed test case');

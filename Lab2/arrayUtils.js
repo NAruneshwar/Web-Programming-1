@@ -2,11 +2,17 @@
 
 
 const mean = (arr)=>{
+    if(!Array.isArray(arr)){
+        throw 'Error: Input is not a list'
+    }
     if (typeof (arr) !== 'object' || arr === null ) {
 		throw 'Error:Input must be non-null object'
     }
     if (arr == undefined) {
 		throw 'Error:Input does not exist'
+    }
+    if (arr.length==0){
+        throw 'Error the array given was empty'
     }
   
     let total = arr.reduce(function(a, b){
@@ -25,6 +31,10 @@ const medianSquared = (arr) =>{
     if (arr == undefined) {
 		throw 'Error:Input does not exist'
     }
+    if (arr.length==0){
+        throw 'Error the array given was empty'
+    }
+
     arr.sort((a,b)=>a-b);
     if(arr.length %2 ==0)
         {
@@ -42,6 +52,9 @@ const maxElement = (arr) =>{
     if (arr == undefined) {
 		throw 'Error:Input does not exist'
     }
+    if (arr.length==0){
+        throw 'Error the array given was empty'
+    }
     let max = 0
     for(let i=1; i<arr.length; i++){
         if(typeof(arr[i])!="number"){
@@ -52,7 +65,7 @@ const maxElement = (arr) =>{
         }
     }
     let result = {}
-    result[max] = arr[max]
+    result[arr[max]] = max
     return result
 }
 
@@ -87,13 +100,16 @@ const fill = (end,value) =>{
 const countRepeating = (arr) =>
 {
     if(arr == null){
-        return ' '
+        throw 'Error: No Input given'
     }
     if (typeof (arr) !== 'object') {
 		throw 'Error:Input must be non-null object'
     }
     if (arr == undefined) {
 		throw 'Error:Input does not exist'
+    }
+    if (arr.length == 0){
+        throw 'Error: No inputs given given'
     }
     let result = {}
     let initial={}
@@ -113,6 +129,9 @@ const countRepeating = (arr) =>
 
 const isEqual = (arr1, arr2)=>
 {
+    let new_arr1 = []
+    let new_arr2 = []
+
     if (typeof (arr1) !== 'object' || arr1 === null ) {
 		throw 'Error:Input arr1 must be non-null object'
     }
@@ -130,29 +149,24 @@ const isEqual = (arr1, arr2)=>
         return false
     }
     else{
-        arr1.sort((a,b)=>a-b);
-        arr2.sort((a,b)=>a-b) ;
-        if (arr1==arr2){
-            return true
+        for(let i = 0; i<arr1.length ; i++){
+            if(Array.isArray(arr1[i])){
+                new_arr1.push(arr1[i].sort());
+            }else{
+                new_arr1.push(arr1[i]);
+            }
+            if(Array.isArray(arr2[i])){
+                new_arr2.push(arr2[i].sort());
+                }else{
+                    new_arr2.push(arr2[i]);
+                }
         }
-        else{
-            for(let i = 0; i<arr1.length ; i++)
-            {
-                arr1[i].sort((a,b)=>a-b)
-                arr2[i].sort((a,b)=>a-b)
-            }
-            if(arr1==arr2)
-            {   
-                return true
-            }
-            else{
-                return false
-            }
-        }
+        return JSON.stringify(new_arr1.sort())===JSON.stringify(new_arr2.sort());
+
+        
 
     }
 }
-
 
 
 module.exports = {
