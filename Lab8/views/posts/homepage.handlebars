@@ -1,0 +1,33 @@
+<title>Show Finder</title>
+
+<article class="new-post">
+    <body>
+        <h1>Show Finder</h1>
+        <h1>Search something</h1>
+        <main>
+            <p>
+                This is website that lets you search for shows. <br>
+                You can also find your favorate show and click on it for more detailed discription.
+            </p>
+
+            <form action="/search" method="POST" class="new-post-form">
+                <label id="searchTerm">
+                    Search box
+                    <input type="text" id= "searchTerm" name="searchTerm" placeholder="Enter a name of the show" value="{{{post.show}}}" class="full-width-input"/>
+                </label>
+                
+                <button type="submit" value="OK">Search</button>
+            </form>
+        </main>
+    </body>
+
+    {{#if hasErrors}}
+    <ul class="error-list">
+        {{#each errors}}
+        <li>
+            {{this}}
+        </li>
+        {{/each}}
+    </ul>
+    {{/if}}
+</article>

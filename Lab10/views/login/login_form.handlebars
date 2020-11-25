@@ -1,0 +1,18 @@
+<form action="/login" id ="login-form" method="post">
+    <h1> Please Log in to access the site </h1>
+    <div class="container-fluid">
+        <label>Username:<input type="text" id = "username" name="username"/></label>
+    </div>
+    <div class="container-fluid">
+        <label>Password:<input type="password" id = "password" name="password"/></label>
+    </div>
+    <div class="container-fluid">
+        <input type="submit" value="Login" />
+    </div>
+
+    {{#if error}}
+    <div class="row" style="color:#8b0000;">
+        <span>{{message}}</span>
+    </div>
+    {{/if}}
+</form>

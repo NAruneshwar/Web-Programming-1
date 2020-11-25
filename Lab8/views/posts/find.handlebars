@@ -1,0 +1,16 @@
+<title>Shows Found</title>
+
+<H1>Shows Found</H1>
+<H2>{{query}}</H2>
+<main>
+    <a href='/'>Make another search</a>
+    <ul>
+        {{#each showDetails}}
+            <li>
+                <a href="/shows/{{@key}}">{{this}}</a>
+            </li>
+        {{else}}
+            <p class="not-found">We're sorry, but no results were found for {{query}}.</p>
+        {{/each}}    
+    </ul>
+</main>

@@ -1,0 +1,20 @@
+<main>
+    <article class= "new-post">
+        <form action="/search" id = "form-submit" method="POST" class="new-post-form">
+                <label id="searchTermlabel" class = "searchTermlabel">
+                    Enter a number to check if the fibanocci
+                    <input type="number" id= "searchTerm" name="number" placeholder="Enter the number to check" value="{{{post.show}}}" class="full-width-input"/>
+                </label>
+                  <div class="form-group hidden" id="error-container">
+                    <div class="alert alert-danger">
+                    </div>
+                </div>
+                
+                <button type="submit" id ="button" value="OK">Search</button>
+            </form>
+
+    </article>
+    <ol id ="results"> </ol>
+
+<p id ='Error' class = 'Error'> </p>
+</main>
