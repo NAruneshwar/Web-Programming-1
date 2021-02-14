@@ -1,0 +1,27 @@
+
+
+        <main>
+            <p>
+                This is website that lets you search for shows. <br>
+            </p>
+
+            <form id="searchForm" class="new-post-form">
+                <label for="search_term"> Enter your search</label>
+                    <input type="text" id= "search_term" name="search_term" placeholder="Enter a name of the show" value="{{{post.show}}}" class="full-width-input"/>
+                
+                <button type="submit" value="OK">Search</button>
+            </form>
+
+                
+            <div id="show" >
+
+            </div>      
+            <ul id = "showList" >                     
+            </ul> 
+            <a href="/" id="homeLink">Back to All Shows</a>
+        </main>
+
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+    <script src="/public/js/form.js"></script>

@@ -1,0 +1,26 @@
+p {
+    color: blue;
+}
+h1 {
+    background-color: rgb(173, 69, 34);
+    width: auto;
+
+}
+body {
+	background: #dedede;
+	font-family: Georgia, "Cambria", "Times New Roman", Times, serif;
+}
+.new-post-form .full-width-input {
+	display: block;
+	min-height: 5em;
+	margin: 10px 0;
+	width: 80%;
+}
+
+label {
+	font-weight: bold;
+}
+
+ul li a{    
+	color:green;
+}
